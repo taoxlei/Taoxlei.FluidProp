@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taoxlei.FluidProp", "Taoxlei.FluidProp\Taoxlei.FluidProp.csproj", "{D3201ACA-7465-4C7F-800D-B44379296F69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taoxlei.FluidPropBenchmarks", "Taoxlei.FluidPropBenchmarks\Taoxlei.FluidPropBenchmarks.csproj", "{24D1D49D-8140-4A41-80BB-053FB37AF47F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taoxlei.FluidPropTests", "Taoxlei.FluidPropTests\Taoxlei.FluidPropTests.csproj", "{8612281B-AC2D-4CED-A5D2-F71617067521}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Debug|x64.ActiveCfg = Debug|x64
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Debug|x64.Build.0 = Debug|x64
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Release|x64.ActiveCfg = Release|x64
+		{D3201ACA-7465-4C7F-800D-B44379296F69}.Release|x64.Build.0 = Release|x64
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Debug|x64.ActiveCfg = Debug|x64
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Debug|x64.Build.0 = Debug|x64
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Release|x64.ActiveCfg = Release|x64
+		{24D1D49D-8140-4A41-80BB-053FB37AF47F}.Release|x64.Build.0 = Release|x64
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Debug|x64.ActiveCfg = Debug|x64
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Debug|x64.Build.0 = Debug|x64
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Release|x64.ActiveCfg = Release|x64
+		{8612281B-AC2D-4CED-A5D2-F71617067521}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D867E2CF-EFE7-46E4-9F4C-D9123AEBDBB5}
+	EndGlobalSection
+EndGlobal
