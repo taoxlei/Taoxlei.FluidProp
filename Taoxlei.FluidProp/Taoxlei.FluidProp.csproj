@@ -15,11 +15,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="CoolProp.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  <PackagePath>build\</PackagePath>
-      <Pack>true</Pack>
-    </None>
+	<None Include="Taoxlei.FluidProp.targets" PackagePath="build\" Pack="true" />
+	<None Include="CoolProp.dll" PackagePath="build\" Pack="true">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
   </ItemGroup>
 
 </Project>
