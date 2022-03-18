@@ -1,0 +1,26 @@
+﻿image: Visual Studio 2022
+
+install:
+  - ps: dotnet tool install --global GitVersion.Tool --version 5.*
+
+assembly_info:
+  patch: false
+
+before_build:
+  - ps: dotnet restore
+  - ps: dotnet-gitversion /l console /output buildserver /updateprojectfiles
+
+build:
+  verbosity: minimal
+  project: Taoxlei.FluidProp.sln
+
+after_build:
+  - ps: dotnet pack Taoxlei.FluidProp\Taoxlei.FluidProp.csproj --no-build --output .
+
+test:
+  assemblies:
+    only:
+    - Taoxlei.FluidPropTests.dll
+
+artifacts:
+  - path: Taoxlei.FluidProp.$(GitVersion_NuGetVersion).nupkg
