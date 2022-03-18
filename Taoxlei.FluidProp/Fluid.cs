@@ -4,7 +4,7 @@ namespace Taoxlei.FluidProp
 {
     public static class Fluid
     {
-        private static AbstractState? _state;
+        private static AbstractState _state;
 
         private static AbstractState GetAbstractState(string fluid)
         {
