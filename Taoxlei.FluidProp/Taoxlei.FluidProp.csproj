@@ -3,11 +3,22 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
+    <Title>Taoxlei.FluidProp</Title>
+    <PackageId>Taoxlei.FluidProp</PackageId>
+    <Authors>Tao Xiaolei</Authors>
+    <Description>Get fluid properties, especially for HVAC simulation scenarios.</Description>
+    <PackageProjectUrl>https://github.com/taoxlei/Taoxlei.FluidProp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/taoxlei/Taoxlei.FluidProp</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>CoolProp REFPROP Thermodynamics thermophysical properties</PackageTags>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
     <None Update="CoolProp.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  <PackagePath>build\</PackagePath>
+      <Pack>true</Pack>
     </None>
   </ItemGroup>
 
