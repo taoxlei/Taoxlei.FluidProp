@@ -16,6 +16,9 @@ namespace Taoxlei.FluidProp.Tests
             double h = 250e3;
             var r = Fluid.PH(p, h, "R32");
 
+            double expectedDensity = 183.0023964456368;
+            Assert.AreEqual(expectedDensity, r.Density, expectedDensity*0.001);
+
             foreach (var pi in r.GetType().GetProperties())
             {
                 Console.WriteLine($"{pi.Name}: {pi.GetValue(r)?.ToString()}");
