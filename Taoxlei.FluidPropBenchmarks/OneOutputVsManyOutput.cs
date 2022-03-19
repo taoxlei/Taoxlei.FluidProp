@@ -31,7 +31,7 @@ namespace Taoxlei.FluidPropBenchmarks
         public double ManyOutput()
         {
             var r = FluidProp.Fluid.PH(p, h, "R32");
-            return r.Density;
+            return r[FluidProp.FluidParameter.Density];
         }
     }
 }

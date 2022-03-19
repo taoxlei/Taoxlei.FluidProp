@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Taoxlei.FluidProp
 {
@@ -15,29 +16,29 @@ namespace Taoxlei.FluidProp
             return _state;
         }
 
-        private static FluidOutput GetFluidOutput(AbstractState state)
+        private static Dictionary<FluidParameter, double> GetFluidOutput(AbstractState state)
         {
-            var fo = new FluidOutput();
-            fo.Compressibility = state.compressibility_factor();
-            fo.Conductivity = state.conductivity();
-            fo.CriticalPressure = state.p_critical();
-            fo.CriticalTemperature = state.T_critical();
-            fo.Density = state.rhomass();
-            fo.DynamicViscosity = state.viscosity();
-            fo.Enthalpy = state.hmass();
-            fo.Entropy = state.smass();
-            fo.InternalEnergy = state.umass();
-            fo.MolarMass = state.molar_mass();
-            fo.Phase = (FluidPhase)(int)state.phase(); // TODO
-            fo.Prandtl = state.Prandtl();
-            fo.Pressure = state.p();
-            fo.Quality = state.Q();
-            fo.SoundSpeed = fo.Phase == FluidPhase.TwoPhase ? double.NaN : state.speed_sound(); // TODO
-            fo.SpecificHeat = state.cpmass();
-            fo.SurfaceTension = state.surface_tension();
-            fo.Temperature = state.T();
-            fo.TriplePressure = state.p_triple();
-            fo.TripleTemperature = state.Ttriple();
+            var fo = new Dictionary<FluidParameter, double>
+            {
+                { FluidParameter.Compressibility, state.compressibility_factor() },
+                { FluidParameter.Conductivity, state.conductivity() },
+                { FluidParameter.CriticalPressure, state.p_critical() },
+                { FluidParameter.CriticalTemperature, state.T_critical() },
+                { FluidParameter.Density, state.rhomass() },
+                { FluidParameter.DynamicViscosity, state.viscosity() },
+                { FluidParameter.Enthalpy, state.hmass() },
+                { FluidParameter.Entropy, state.smass() },
+                { FluidParameter.InternalEnergy, state.umass() },
+                { FluidParameter.MolarMass, state.molar_mass() },
+                { FluidParameter.Prandtl, state.Prandtl() },
+                { FluidParameter.Pressure, state.p() },
+                { FluidParameter.Quality, state.Q() },
+                { FluidParameter.SpecificHeat, state.cpmass() },
+                { FluidParameter.SurfaceTension, state.surface_tension() },
+                { FluidParameter.Temperature, state.T() },
+                { FluidParameter.TriplePressure, state.p_triple() },
+                { FluidParameter.TripleTemperature, state.Ttriple() },
+            };
             return fo;
         }
 
@@ -48,7 +49,7 @@ namespace Taoxlei.FluidProp
         /// <param name="h">J/kg</param>
         /// <param name="fluid"></param>
         /// <returns></returns>
-        public static FluidOutput PH(double p, double h, string fluid)
+        public static Dictionary<FluidParameter, double> PH(double p, double h, string fluid)
         {
             var state = GetAbstractState(fluid);
             state.update(input_pairs.HmassP_INPUTS, h, p);
@@ -62,7 +63,7 @@ namespace Taoxlei.FluidProp
         /// <param name="q"></param>
         /// <param name="fluid"></param>
         /// <returns></returns>
-        public static FluidOutput PQ(double p, double q, string fluid)
+        public static Dictionary<FluidParameter, double> PQ(double p, double q, string fluid)
         {
             var state = GetAbstractState(fluid);
             state.update(input_pairs.PQ_INPUTS, p, q);
@@ -83,11 +84,9 @@ namespace Taoxlei.FluidProp
                 case FluidParameter.Entropy: return state.smass();
                 case FluidParameter.InternalEnergy: return state.umass();
                 case FluidParameter.MolarMass: return state.molar_mass();
-                //case FluidParameter.Phase: return  (FluidPhase)(int)state.phase(); // TODO
                 case FluidParameter.Prandtl: return state.Prandtl();
                 case FluidParameter.Pressure: return state.p();
                 case FluidParameter.Quality: return state.Q();
-                //case FluidParameter.SoundSpeed: return (FluidParameter.Phase:= FluidPhase.TwoPhase ? double.NaN : state.speed_sound()); // TODO
                 case FluidParameter.SpecificHeat: return state.cpmass();
                 case FluidParameter.SurfaceTension: return state.surface_tension();
                 case FluidParameter.Temperature: return state.T();
