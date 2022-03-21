@@ -40,5 +40,21 @@ namespace Taoxlei.FluidProp.Tests
                 Console.WriteLine($"{kvp.Key}: {kvp.Value}");
             }
         }
+
+        [TestMethod()]
+        public void TQTest()
+        {
+            double t = 279.7739821468216;
+            double q = 0.1257649745484279;
+            var r = Fluid.TQ(t, q, "R32");
+
+            double expectedDensity = 183.0023964456368;
+            Assert.AreEqual(expectedDensity, r[FluidParameter.Density], expectedDensity * 0.001);
+
+            foreach (var kvp in r)
+            {
+                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+            }
+        }
     }
 }

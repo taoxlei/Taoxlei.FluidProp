@@ -70,6 +70,20 @@ namespace Taoxlei.FluidProp
             return GetFluidOutput(state);
         }
 
+        /// <summary>
+        /// Get all output by Temperature and Quality
+        /// </summary>
+        /// <param name="t">K</param>
+        /// <param name="q"></param>
+        /// <param name="fluid"></param>
+        /// <returns></returns>
+        public static Dictionary<FluidParameter, double> TQ(double t, double q, string fluid)
+        {
+            var state = GetAbstractState(fluid);
+            state.update(input_pairs.QT_INPUTS, q, t);
+            return GetFluidOutput(state);
+        }
+
         private static double GetOneOutput(AbstractState state, FluidParameter fp)
         {
             switch (fp)
@@ -125,6 +139,22 @@ namespace Taoxlei.FluidProp
         {
             var state = GetAbstractState(fluid);
             state.update(input_pairs.PQ_INPUTS, p, q);
+            return GetOneOutput(state, fp);
+        }
+
+        /// <summary>
+        /// Get a single output by Temperature and Quality
+        /// </summary>
+        /// <param name="t">K</param>
+        /// <param name="q"></param>
+        /// <param name="fluid"></param>
+        /// <param name="fp"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public static double TQ(double t, double q, string fluid, FluidParameter fp)
+        {
+            var state = GetAbstractState(fluid);
+            state.update(input_pairs.QT_INPUTS, q, t);
             return GetOneOutput(state, fp);
         }
 
